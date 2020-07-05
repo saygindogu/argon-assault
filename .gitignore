@@ -594,4 +594,5 @@ InitTestScene*.unity
 # exclude everything
 ArgonAssault/Library/*
 ArgonAssault/Temp/*
-ArgonAssault/Assets/*
+ArgonAssault/Assets/ImportedAssets/*
+ArgonAssault/Assets/AudioAssets/*
