@@ -17,6 +17,11 @@ I can easily say that none of the assets that might leak into this repository wi
 
 But you are warned.
 
+## How do I make this work
+
+Because I ignored and hided loads of stuff, this won't work off the shelf. Please try to fill in the files that are listed in
+`ArgonAssault/Assets/assetList.txt` file. Then with a little bit of tweaking and trying hard, you'll get it working, hopefully.
+
 ## Future Developments
 
 N/A

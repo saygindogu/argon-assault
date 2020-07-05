@@ -18,6 +18,8 @@ public class StarShipPlayer : MonoBehaviour
     [SerializeField] float positionPitchFactor = -5f;
     [SerializeField] float controlPitchFactor = -30f;
 
+    bool isControlsEnabled = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +28,13 @@ public class StarShipPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
-        float yThrow = CrossPlatformInputManager.GetAxis("Vertical");
+        if( isControlsEnabled ){
+            float xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
+            float yThrow = CrossPlatformInputManager.GetAxis("Vertical");
         
-        HandleMovement(xThrow, yThrow);
-        HandleAim(xThrow, yThrow);
+            HandleMovement(xThrow, yThrow);
+            HandleAim(xThrow, yThrow);
+        }
     }
 
     private void HandleMovement(float xThrow, float yThrow){
@@ -50,5 +54,9 @@ public class StarShipPlayer : MonoBehaviour
         float roll = 0f;
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
 
+    }
+
+    void OnPlayerDeath(){
+        isControlsEnabled = false;
     }
 }
